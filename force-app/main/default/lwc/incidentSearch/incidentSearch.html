@@ -1,0 +1,45 @@
+<!--
+  @Component Name     : incidentSearch.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 8/21/2019, 6:14:28 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/21/2019, 12:53:05 PM   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <lightning-card  title="" ><p class="slds-p-horizontal_small">
+        <lightning-tile label="Search Incident" type="media">
+          <lightning-avatar slot="media" src={incidentURL} fallback-icon-name="standard:person_account" alternative-text="Bruce Wayne"></lightning-avatar>
+          
+        </lightning-tile>
+            <lightning-input name="incNum" label="Incident Number" value={incNum} onchange={handleIncNum} ></lightning-input>
+            <template if:true={statusValues.data}>
+                <lightning-combobox name="status"
+                                    label="Status"
+                                    value={statusValue}
+                                    placeholder="-Select-"
+                                    options={statusValues.data.values}
+                                    onchange={handleChange}
+                                     >
+                </lightning-combobox>
+          </template><br/>
+          <template if:true={appliesToValues.data}>
+                <lightning-combobox name="appliesTo"
+                                    label="Applies To"
+                                    value={appliesToValue}
+                                    placeholder="-Select-"
+                                    options={appliesToValues.data.values}
+                                    onchange={handleChange}
+                                     >
+                </lightning-combobox>
+          </template><br/>
+          <lightning-button label="Search" slot="actions" variant="brand" onclick={handleSearch}></lightning-button>
+          
+        </p>
+    </lightning-card>  
+</template>

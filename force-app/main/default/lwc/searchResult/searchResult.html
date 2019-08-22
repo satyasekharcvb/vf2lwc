@@ -1,0 +1,29 @@
+<!--
+  @Component Name     : searchResult.html
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 8/21/2019, 6:17:19 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/21/2019, 2:41:25 PM   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<template>
+    <div class="slds-p-around_medium lgc-bg" style="background: lightgrey;">
+        <lightning-helptext content=""></lightning-helptext>
+        <span class="slds-p-left_medium">Click on any Incident number to view/update Incident details</span>
+    </div>
+    
+    <template if:true={incidents}>
+    <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="id"
+                    data={incidents.data}
+                    columns={columns}>
+            </lightning-datatable>
+        </div> 
+    </template>
+</template>
