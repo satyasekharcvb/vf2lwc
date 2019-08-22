@@ -1,0 +1,149 @@
+<!--
+  @Page Name          : IncidentManagement.page
+  @Description        : 
+  @Author             : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Group              : 
+  @Last Modified By   : ChangeMeIn@UserSettingsUnder.SFDoc
+  @Last Modified On   : 8/21/2019, 5:44:43 PM
+  @Modification Log   : 
+  ==============================================================================
+  Ver         Date                     Author      		      Modification
+  ==============================================================================
+  1.0    8/21/2019, 12:45:55 PM   ChangeMeIn@UserSettingsUnder.SFDoc     Initial Version
+-->
+<apex:page sidebar="false" standardController="Incident__c" 
+    recordSetVar="incidentlist" extensions="incidentmanagement" 
+        tabStyle="incident_management__tab">
+    
+    <apex:form >
+    <script>
+    function pageScroll() {
+            window.scrollBy(0,400); // horizontal and vertical scroll increments
+        }
+    </script>
+        
+    <style>
+    input.btn { 
+        color:#050; 
+        font: bold 84% 'trebuchet ms',helvetica,sans-serif; 
+        background-color:#fed; 
+        border:1px solid; 
+        border-color: #696 #363 #363 #696; 
+    }
+    </style>
+
+
+    <apex:pageBlock title="Incident Management">
+        
+        <apex:pageblocksection columns="2" title="Search Incidents" collapsible="false">            
+            <apex:inputField id="IncidentNo" value="{!inciSearch.Incident_No_for_Search__c}"/>
+            <apex:inputField value="{!inciSearch.Status__c}"/> 
+            <apex:inputField value="{!inciSearch.Applies_To__c}"/> 
+        </apex:pageblocksection>
+
+        <center> 
+            <apex:commandButton value="Search" action="{!searchincident}"/> 
+        </center> <br/>
+
+        <apex:pageBlockSection title="Incidents List" rendered="{!NOT(ISNULL(incsearchresults))}" collapsible="false">
+        </apex:pageBlockSection>
+        <table style="width:700px;"> 
+            <tr>
+                <td><apex:pageMessage summary="Click on any Incident number to view/update Incident details" severity="info" strength="3" rendered="{!NOT(ISNULL(incsearchresults))}"/></td>                     
+            </tr> 
+        </table>
+            
+            
+        <!--apex:panelGrid columns="2" rendered="{!NOT(ISNULL(incsearchresults))}"> 
+                <apex:commandbutton action="{!previous}" status="loadstatus" rerender="incidentlist" styleclass="btn" value="Previous"/>
+                <apex:commandbutton action="{!next}" status="loadstatus" rerender="incidentlist" styleclass="btn" value="Next"/>  
+        </apex:panelGrid-->
+            
+        <apex:actionStatus id="loadstatus1">
+                <apex:facet name="start">
+                    <img src="/img/loading.gif"/>&nbsp;Processing, Please wait...    
+                </apex:facet>                               
+        </apex:actionStatus>
+            
+        <apex:outputpanel id="incidentlist" rendered="{!NOT(ISNULL(incsearchresults))}">
+            <apex:pageBlockTable var="incident" value="{!incsearchresults}" id="list">
+                <apex:column headervalue="Incident #"> 
+                    <apex:outputpanel > 
+                        <apex:commandlink oncomplete="pageScroll()" status="loadstatus" rerender="incdetails" value="{!incident.Incident__c}" action="{!queryincident}">                                                                                                          
+                           <apex:param name="incid" value="{!incident.id}"/>                     
+                        </apex:commandlink>
+                    </apex:outputpanel>                                                         
+                </apex:column>
+                <apex:column headervalue="Applies to">                                                                        
+                    <apex:outputfield value="{!incident.Applies_To__c}" style="width:100px;"/>                                                         
+                </apex:column>
+                <apex:column headervalue="Status">                                                                        
+                    <apex:outputfield value="{!incident.Status__c}" style="width:100px;"/>                                                         
+                </apex:column>
+                <apex:column headervalue="Summary">                                                                        
+                    <apex:outputfield value="{!incident.Summary__c}" style="width:100px;"/>                                                         
+                </apex:column> 
+            </apex:pageBlockTable>
+        
+            
+        <!--apex:panelGrid columns="2" rendered="{!NOT(ISNULL(incsearchresults))}"> 
+            <apex:commandbutton action="{!previous}" status="loadstatus" rerender="incidentlist" styleclass="btn" value="Previous"/>
+            <apex:commandbutton action="{!next}" status="loadstatus" rerender="incidentlist" styleclass="btn" value="Next"/> 
+        </apex:panelGrid-->
+            
+        <apex:actionStatus id="loadstatus">
+            <apex:facet name="start">
+                <img src="/img/loading.gif"/>&nbsp;Processing, Please wait...    
+            </apex:facet>                               
+        </apex:actionStatus>
+        <hr/>
+    </apex:outputpanel>
+        <apex:outputpanel style="display:none"> 
+            <apex:inputField value="{!incdetail.Delivery_Date__c}"/>
+        </apex:outputpanel> 
+            
+        <apex:outputpanel id="incdetails">
+            <apex:outputpanel rendered="{!NOT(ISNULL(incdetail))}">
+                <apex:pagemessages />
+                
+                <center>  
+                    <apex:commandbutton value="Save" action="{!saveinc}" status="refreshstatus" rerender="incdetails"/>    
+                </center>     
+                <br/>
+                <apex:pageBlockSection title="Incident Details" collapsible="false">
+                    <apex:outputField value="{!incdetail.Incident__c}"/>
+                    <apex:outputField value="{!incdetail.Summary__c}"/>
+                    <apex:outputField value="{!incdetail.Responsible__c}"/>                    
+                    <apex:outputField value="{!incdetail.Priority__c}"/>
+                    <apex:outputField value="{!incdetail.Severity__c}"/>
+                    <apex:outputField value="{!incdetail.Status_Date__c}"/>
+                    <apex:outputField value="{!incdetail.Created_Date__c}"/>
+                    <apex:inputField value="{!incdetail.Status__c}"/>
+                    
+                    <apex:inputField value="{!incdetail.Planned_Start_date__c}"/>
+                    <apex:inputField value="{!incdetail.Actual_Start_date__c}"/>
+                    <apex:inputField value="{!incdetail.Planned_End_date__c}"/>                            
+                    <apex:inputField value="{!incdetail.Actual_End_Date__c}"/>
+                    <apex:inputField value="{!incdetail.Delivery_Date__c}"/>
+                    <apex:inputField value="{!incdetail.Actual_Delivery_Date__c}"/> 
+                    <apex:inputField value="{!incdetail.Remarks__c}"/>
+                </apex:pageBlockSection> 
+                    
+                    
+                <apex:outputpanel > <br/>
+                    <center>  
+                        <apex:commandbutton value="Save" action="{!saveinc}" status="refreshstatus" rerender="incdetails"/>    
+                    </center>     
+                </apex:outputpanel><br/>
+
+                <apex:actionStatus id="refreshstatus">
+                    <apex:facet name="start">
+                        <img src="/img/loading.gif"/>&nbsp;Processing, Please wait...    
+                    </apex:facet>                               
+                </apex:actionStatus>                   
+                <hr/>
+            </apex:outputpanel>             
+        </apex:outputpanel>  
+    </apex:pageblock>  
+    </apex:form> 
+</apex:page>
