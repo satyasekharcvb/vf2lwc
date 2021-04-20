@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Severity__c</fullName>
+    <externalId>false</externalId>
+    <label>Severity</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>High - Run business</fullName>
+                <default>false</default>
+                <label>High - Run business</label>
+            </value>
+            <value>
+                <fullName>Low - Important but not urgent</fullName>
+                <default>false</default>
+                <label>Low - Important but not urgent</label>
+            </value>
+            <value>
+                <fullName>Medium - Efficiency</fullName>
+                <default>false</default>
+                <label>Medium - Efficiency</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

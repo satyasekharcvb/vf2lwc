@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_End_date_must_be_greater_than_str</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( Actual_End_Date__c  &lt;  Actual_Start_date__c , TRUE, FALSE)</errorConditionFormula>
+    <errorDisplayField>Actual_End_Date__c</errorDisplayField>
+    <errorMessage>End Date cannot be less than Start Date</errorMessage>
+</ValidationRule>
