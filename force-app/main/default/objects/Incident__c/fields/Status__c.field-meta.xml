@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Reported</fullName>
+                <default>true</default>
+                <label>Reported</label>
+            </value>
+            <value>
+                <fullName>Assigned</fullName>
+                <default>false</default>
+                <label>Assigned</label>
+            </value>
+            <value>
+                <fullName>Analysis In Progress</fullName>
+                <default>false</default>
+                <label>Analysis In Progress</label>
+            </value>
+            <value>
+                <fullName>Pending Business User Clarification</fullName>
+                <default>false</default>
+                <label>Pending Business User Clarification</label>
+            </value>
+            <value>
+                <fullName>Pending with Third Party</fullName>
+                <default>false</default>
+                <label>Pending with Third Party</label>
+            </value>
+            <value>
+                <fullName>Implementation In Progress</fullName>
+                <default>false</default>
+                <label>Implementation In Progress</label>
+            </value>
+            <value>
+                <fullName>Coding Complete / System Testing</fullName>
+                <default>false</default>
+                <label>Coding Complete / System Testing</label>
+            </value>
+            <value>
+                <fullName>Pending User Confirmation</fullName>
+                <default>false</default>
+                <label>Pending User Confirmation</label>
+            </value>
+            <value>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+                <label>Resolved</label>
+            </value>
+            <value>
+                <fullName>Deployed</fullName>
+                <default>false</default>
+                <label>Deployed</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

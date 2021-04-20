@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Estimates_cannot_be_negative_CUT</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( CUT_Estimated__c &lt; 0, TRUE,FALSE)</errorConditionFormula>
+    <errorDisplayField>CUT_Estimated__c</errorDisplayField>
+    <errorMessage>Estimates cannot be negative.</errorMessage>
+</ValidationRule>
