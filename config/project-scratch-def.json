@@ -1,12 +1,21 @@
 {
-  "orgName": "VfToLwc",
-  "edition": "Developer",
-  "hasSampleData": false,
-  "settings": {
-      "orgPreferenceSettings": {
-          "s1DesktopEnabled": true,
-          "selfSetPasswordInApi": true,
-          "s1EncryptedStoragePref2": false
-      }
-  }
+    "orgName": "VF to LWC Live Code",
+    "edition": "Developer",
+    "hasSampleData": false,
+    "features": ["EnableSetPasswordInApi"],
+    "settings": {
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": false
+        },
+        "userEngagementSettings": {
+            "enableOrchestrationInSandbox": true,
+            "enableShowSalesforceUserAssist": false
+        },
+        "pathAssistantSettings": {
+            "pathAssistantEnabled": true
+        }
+    }
 }

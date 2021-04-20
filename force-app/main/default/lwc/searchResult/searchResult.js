@@ -1,5 +1,5 @@
-import { LightningElement,wire,track } from 'lwc';
-import { CurrentPageReference } from 'lightning/navigation';
+import { LightningElement, wire, track } from "lwc";
+/*import { CurrentPageReference } from 'lightning/navigation';
 import findIncidents from '@salesforce/apex/incidentmanagement.findIncidents';
 import { registerListener, unregisterAllListeners } from 'c/pubsub';
 
@@ -11,9 +11,9 @@ const columns = [
     { label: 'Status', fieldName: 'status', type: 'string' },
     { label: 'Summary', fieldName: 'summary', type: 'string' },
 ];
-
+*/
 export default class SearchResult extends LightningElement {
-    @track columns = columns;
+    /* @track columns = columns;
     @track incidents;
     @track error;
     incNoVal;
@@ -43,5 +43,5 @@ export default class SearchResult extends LightningElement {
         console.log(this.incNoVal);
         console.log(this.statusValue);
         console.log(this.appliesToValue);
-    }
+    }*/
 }
