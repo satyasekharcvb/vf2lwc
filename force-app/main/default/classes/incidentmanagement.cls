@@ -13,9 +13,7 @@ public with sharing class incidentmanagement {
             FROM Incident__c
             WHERE
                 Status__c = :incSearch.Status__c
-                OR Incident__c LIKE :incSearch.Incident_No_for_Search__c + '%'
                 OR Applies_To__c = :incSearch.Applies_To__c
-                OR Responsible__c = :incSearch.Responsible__c
         ];
     }
 
@@ -52,4 +50,6 @@ public with sharing class incidentmanagement {
             System.debug(e);
         }
     }
+
+    // LWC Methods go here
 }

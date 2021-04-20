@@ -17,10 +17,6 @@
                 title="Search Incidents"
                 collapsible="false"
             >
-                <apex:inputField
-                    id="IncidentNo"
-                    value="{!incSearch.Incident_No_for_Search__c}"
-                />
                 <apex:inputField value="{!incSearch.Status__c}" />
                 <apex:inputField value="{!incSearch.Applies_To__c}" />
             </apex:pageblocksection>
