@@ -1,6 +1,6 @@
 # VF to LWC Conversion
 
-This is a sample app that show how a Visualforce page can be converted to Lightning Web Components.
+This is a sample app that shows how a Visualforce page can be converted to Lightning Web Components.
 
 ## Steps to use the code
 
