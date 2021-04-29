@@ -9,7 +9,7 @@ public with sharing class incidentmanagement {
 
     public void searchIncidents() {
         incSearchResult = [
-            SELECT Incident__c, Status__c, Applies_to__c, Summary__c
+            SELECT Name, Incident__c, Status__c, Applies_to__c, Summary__c
             FROM Incident__c
             WHERE
                 Status__c = :incSearch.Status__c
@@ -24,6 +24,7 @@ public with sharing class incidentmanagement {
                 .get('incid');
             incident = [
                 SELECT
+                    Name,
                     Incident__c,
                     Summary__c,
                     Responsible__c,
@@ -59,7 +60,7 @@ public with sharing class incidentmanagement {
     ) {
         try {
             return [
-                SELECT Incident__c, Status__c, Applies_to__c, Summary__c
+                SELECT Name, Incident__c, Status__c, Applies_to__c, Summary__c
                 FROM Incident__c
                 WHERE Status__c = :status OR Applies_To__c = :appliesTo
             ];

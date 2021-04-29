@@ -2,7 +2,7 @@
     sidebar="false"
     standardController="Incident__c"
     extensions="IncidentManagement"
-    tabStyle="incident_management__tab"
+    tabStyle="Incident_Management_VF__tab"
 >
     <apex:form>
         <script>
@@ -64,7 +64,7 @@
                                     oncomplete="pageScroll()"
                                     status="loadstatus"
                                     rerender="incdetails"
-                                    value="{!incident.Incident__c}"
+                                    value="{!incident.Name}"
                                     action="{!queryIncident}"
                                 >
                                     <apex:param

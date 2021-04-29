@@ -2,6 +2,7 @@
     <lightning-record-edit-form object-api-name={incObj}>
         <lightning-input-field
             field-name={incStatField}
+            value=""
             onchange={handleStatusChange}
         >
         </lightning-input-field>
@@ -12,6 +13,10 @@
         </lightning-input-field>
     </lightning-record-edit-form>
     <div class="slds-text-align_center">
-        <lightning-button label="Search" onclick={doSearch}></lightning-button>
+        <lightning-button
+            label="Search"
+            onclick={doSearch}
+            variant="brand"
+        ></lightning-button>
     </div>
 </template>

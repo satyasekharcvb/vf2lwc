@@ -65,10 +65,6 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>My_Time_Machine</name>
-        <type>CustomApplication</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>Incident_Management</name>
         <type>CustomApplication</type>
     </appMenuItems>

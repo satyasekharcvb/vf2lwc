@@ -8,8 +8,8 @@ export default class IncidentSearchFilters extends LightningElement {
     incStatField = INCIDENT_STATUS;
     incApplies = INCIDENT_APPLIES;
 
-    selectedStatus;
-    selectedAppliesTo;
+    selectedStatus = "";
+    selectedAppliesTo = "";
 
     handleStatusChange(event) {
         this.selectedStatus = event.detail.value;

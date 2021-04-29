@@ -1,6 +1,9 @@
 <template>
     <div style="background: white; border-radius: 10px">
-        <lightning-accordion allow-multiple-sections-open>
+        <lightning-accordion
+            allow-multiple-sections-open
+            active-section-name={activeSections}
+        >
             <lightning-accordion-section name="A" label="Search Filters">
                 <c-incident-search-filters
                     onsearchclicked={handleSearchClicked}
