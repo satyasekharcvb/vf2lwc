@@ -11,7 +11,7 @@
     <label>Incident Management</label>
     <navType>Standard</navType>
     <tabs>Incident__c</tabs>
-    <tabs>Incident_Management</tabs>
+    <tabs>Incident_Management_VF</tabs>
     <tabs>Incident_Mgmt_LWC</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Incident_Management_UtilityBar</utilityBar>

@@ -1,11 +1,44 @@
 # VF to LWC Conversion
 
-##Steps to use the code
+This is a sample app that show how a Visualforce page can be converted to Lightning Web Components.
 
-1. Install the [Incident and Timesheet management](https://login.salesforce.com/?startURL=%2Fpackaging%2FinstallPackage.apexp%3Fp0%3D04t900000000mDE) package in your Developer Edition. This will provide the basic setup and the required object and fields.
+## Steps to use the code
 
-2. If you haven't already done so, authenticate with your org. You can do it by using **SFDX: Authorize an Org** from the command pallete.
-3. Clone the repository into your local system by using the following command in the Terminal.
-   `git clone https://github.com/satyasekharcvb/vf2lwc`
-   `cd vf2lwc`
-4. Deploy the code to your org by using **SFDX: Deploy This Source to Org** from the command pallete.
+1. Clone the repository:
+
+    ```
+    git clone https://github.com/satyasekharcvb/vf2lwc
+    cd vf2lwc
+    ```
+
+1. Create a scratch org and provide it with an alias (**vf2lwc** in the command below):
+
+    ```
+    sfdx force:org:create -s -f config/project-scratch-def.json -a vf2lwc
+    ```
+
+1. Push the app to your scratch org:
+
+    ```
+    sfdx force:source:push
+    ```
+
+1. Assign the **Incident_Management** permission set to the default user:
+
+    ```
+    sfdx force:user:permset:assign -n Incident_Management
+    ```
+
+1. Open the scratch org:
+
+    ```
+    sfdx force:org:open
+    ```
+
+1. Navigate to the Incident Management App
+
+1. Create a few Incidents from the Incidents Tab
+
+1. Checkout the Visualforce page on the **Incident Management VF** tab
+
+1. Checkout the LWC implmentation on the **Incident Mgmt LWC** tab.

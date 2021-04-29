@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Incident Detail">
+        <div class="slds-var-p-around_medium">
+            <template if:true={recordId}>
+                <lightning-record-form
+                    record-id={recordId}
+                    object-api-name={incidentObj}
+                    layout-type="Full"
+                    mode="edit"
+                ></lightning-record-form>
+            </template>
+            <template if:false={recordId}>
+                <div class="slds-text-align_center">
+                    Please select an incident to view details.
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

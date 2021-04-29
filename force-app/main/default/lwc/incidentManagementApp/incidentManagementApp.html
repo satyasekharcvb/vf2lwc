@@ -1,0 +1,20 @@
+<template>
+    <div style="background: white; border-radius: 10px">
+        <lightning-accordion
+            allow-multiple-sections-open
+            active-section-name={activeSections}
+        >
+            <lightning-accordion-section name="A" label="Search Filters">
+                <c-incident-search-filters
+                    onsearchclicked={handleSearchClicked}
+                ></c-incident-search-filters>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="B" label="Search Results">
+                <c-incident-search-results
+                    selected-status={fromEvent_selectedStatus}
+                    selected-applies-to={fromEvent_selectedAppliesTo}
+                ></c-incident-search-results>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </div>
+</template>
