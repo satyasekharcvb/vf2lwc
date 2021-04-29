@@ -365,6 +365,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Incident_Management_VF</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Incident__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>
