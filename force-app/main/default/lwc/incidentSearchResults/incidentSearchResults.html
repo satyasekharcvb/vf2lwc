@@ -1,0 +1,12 @@
+<template>
+    <template if:true={searchResults.data}>
+        <lightning-datatable
+            key-field="id"
+            data={searchResults.data}
+            columns={columns}
+            onrowaction=""
+        >
+        </lightning-datatable>
+    </template>
+    <template if:false={searchResults.data}> {nores} </template>
+</template>

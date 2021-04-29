@@ -1,0 +1,17 @@
+<template>
+    <lightning-record-edit-form object-api-name={incObj}>
+        <lightning-input-field
+            field-name={incStatField}
+            onchange={handleStatusChange}
+        >
+        </lightning-input-field>
+        <lightning-input-field
+            field-name={incApplies}
+            onchange={handleAppliesToChange}
+        >
+        </lightning-input-field>
+    </lightning-record-edit-form>
+    <div class="slds-text-align_center">
+        <lightning-button label="Search" onclick={doSearch}></lightning-button>
+    </div>
+</template>

@@ -52,4 +52,19 @@ public with sharing class incidentmanagement {
     }
 
     // LWC Methods go here
+    @AuraEnabled(cacheable=true)
+    public static List<Incident__c> searchIncidentsLWC(
+        String status,
+        String appliesTo
+    ) {
+        try {
+            return [
+                SELECT Incident__c, Status__c, Applies_to__c, Summary__c
+                FROM Incident__c
+                WHERE Status__c = :status OR Applies_To__c = :appliesTo
+            ];
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+    }
 }
